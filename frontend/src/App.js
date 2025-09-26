@@ -79,40 +79,95 @@ const Hero = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20">
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-cover bg-center opacity-10" 
+           style={{backgroundImage: 'url(https://images.unsplash.com/photo-1740933084056-078fac872bff?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjB3b3JrcGxhY2V8ZW58MHx8fHwxNzU4Nzg4NzMxfDA&ixlib=rb-4.1.0&q=85)'}}></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Nền tảng tuyển dụng thông minh
+          <div className="mb-8">
+            <span className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              🚀 Tương lai của tuyển dụng
+            </span>
+          </div>
+          
+          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            Nền tảng tuyển dụng <br />
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              thông minh
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Kết nối ứng viên và nhà tuyển dụng thông qua AI. 
-            Tìm việc phù hợp, gợi ý khóa học, và phát triển sự nghiệp của bạn.
+          
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Kết nối ứng viên và nhà tuyển dụng thông qua AI tiên tiến. 
+            Tìm việc phù hợp, gợi ý khóa học, và phát triển sự nghiệp của bạn một cách thông minh.
           </p>
           
-          <div className="flex justify-center items-center space-x-8 mt-12">
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-full shadow-lg mb-4 mx-auto w-20 h-20 flex items-center justify-center">
-                <span className="text-3xl">🎯</span>
+          <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
+            {/* AI Job Matching */}
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50">
+              <div className="relative mb-6">
+                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85" 
+                       alt="AI Brain" className="w-14 h-14 rounded-full object-cover"/>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs">✓</span>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-800">Tìm việc AI</h3>
-              <p className="text-gray-600 text-sm">Gợi ý việc làm phù hợp</p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Tìm việc AI</h3>
+              <p className="text-gray-600 leading-relaxed">AI phân tích hồ sơ và gợi ý những công việc phù hợp nhất với kỹ năng của bạn</p>
             </div>
             
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-full shadow-lg mb-4 mx-auto w-20 h-20 flex items-center justify-center">
-                <span className="text-3xl">👥</span>
+            {/* AI Candidate Matching */}
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50">
+              <div className="relative mb-6">
+                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB3b3JrcGxhY2V8ZW58MHx8fHwxNzU4Nzg4NzMxfDA&ixlib=rb-4.1.0&q=85" 
+                       alt="Professional Interview" className="w-14 h-14 rounded-full object-cover"/>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs">★</span>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-800">Tìm ứng viên</h3>
-              <p className="text-gray-600 text-sm">AI gợi ý ứng viên tốt nhất</p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Tìm ứng viên</h3>
+              <p className="text-gray-600 leading-relaxed">AI gợi ý những ứng viên tốt nhất cho vị trí tuyển dụng của công ty</p>
             </div>
             
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-full shadow-lg mb-4 mx-auto w-20 h-20 flex items-center justify-center">
-                <span className="text-3xl">📚</span>
+            {/* AI Course Recommendations */}
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50">
+              <div className="relative mb-6">
+                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85" 
+                       alt="AI Technology" className="w-14 h-14 rounded-full object-cover"/>
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-xs">📚</span>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-800">Khóa học AI</h3>
-              <p className="text-gray-600 text-sm">Gợi ý kỹ năng cần học</p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Khóa học AI</h3>
+              <p className="text-gray-600 leading-relaxed">Gợi ý những khóa học cần thiết để nâng cao kỹ năng và cơ hội việc làm</p>
+            </div>
+          </div>
+          
+          {/* Success Stats */}
+          <div className="grid md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600">10K+</div>
+              <div className="text-gray-600">Việc làm</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600">5K+</div>
+              <div className="text-gray-600">Ứng viên</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-600">95%</div>
+              <div className="text-gray-600">Độ chính xác AI</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-600">500+</div>
+              <div className="text-gray-600">Công ty</div>
             </div>
           </div>
         </div>
