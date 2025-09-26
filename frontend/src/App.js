@@ -372,58 +372,136 @@ const Dashboard = () => {
             <div className="lg:col-span-3">
               {activeTab === 'overview' && (
                 <div className="space-y-6">
+                  {/* Welcome Section */}
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                    <div className="flex items-center space-x-4">
+                      <img 
+                        src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjB3b3JrcGxhY2V8ZW58MHx8fHwxNzU4Nzg4NzMxfDA&ixlib=rb-4.1.0&q=85"
+                        alt="Welcome" 
+                        className="w-16 h-16 rounded-full object-cover border-4 border-white/30"
+                      />
+                      <div>
+                        <h2 className="text-2xl font-bold">Chào mừng trở lại, {user.name}!</h2>
+                        <p className="opacity-90">Hãy khám phá những cơ hội mới dành cho bạn</p>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-white p-6 rounded-lg shadow">
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
                       <div className="flex items-center">
-                        <div className="p-2 bg-blue-100 rounded-lg">
-                          <span className="text-2xl">💼</span>
+                        <div className="p-3 bg-blue-100 rounded-xl">
+                          <img 
+                            src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85" 
+                            alt="AI Brain" 
+                            className="w-8 h-8 rounded object-cover"
+                          />
                         </div>
                         <div className="ml-4">
                           <p className="text-sm font-medium text-gray-600">Việc làm phù hợp</p>
-                          <p className="text-2xl font-semibold text-gray-900">{jobs.length}</p>
+                          <p className="text-3xl font-bold text-blue-600">{jobs.length}</p>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-white p-6 rounded-lg shadow">
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
                       <div className="flex items-center">
-                        <div className="p-2 bg-green-100 rounded-lg">
+                        <div className="p-3 bg-green-100 rounded-xl">
                           <span className="text-2xl">📝</span>
                         </div>
                         <div className="ml-4">
                           <p className="text-sm font-medium text-gray-600">Hồ sơ hoàn thiện</p>
-                          <p className="text-2xl font-semibold text-gray-900">75%</p>
+                          <p className="text-3xl font-bold text-green-600">85%</p>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-white p-6 rounded-lg shadow">
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
                       <div className="flex items-center">
-                        <div className="p-2 bg-purple-100 rounded-lg">
-                          <span className="text-2xl">🎯</span>
+                        <div className="p-3 bg-purple-100 rounded-xl">
+                          <img 
+                            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85" 
+                            alt="AI Score" 
+                            className="w-8 h-8 rounded object-cover"
+                          />
                         </div>
                         <div className="ml-4">
-                          <p className="text-sm font-medium text-gray-600">AI Scores</p>
-                          <p className="text-2xl font-semibold text-gray-900">8.5/10</p>
+                          <p className="text-sm font-medium text-gray-600">AI Score</p>
+                          <p className="text-3xl font-bold text-purple-600">9.2/10</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-lg shadow p-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-4">Hoạt động gần đây</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <span className="text-blue-500">•</span>
-                        <span className="ml-2 text-sm text-gray-600">Bạn đã xem 5 việc làm mới hôm nay</span>
+                  <div className="grid lg:grid-cols-2 gap-6">
+                    {/* Activity Feed */}
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Hoạt động gần đây
+                      </h3>
+                      <div className="space-y-4">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                            <span className="text-blue-600 text-sm">👀</span>
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-sm text-gray-700">Bạn đã xem 8 việc làm mới hôm nay</p>
+                            <p className="text-xs text-gray-500">2 giờ trước</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                            <span className="text-green-600 text-sm">📈</span>
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-sm text-gray-700">Hồ sơ của bạn được xem 15 lần tuần này</p>
+                            <p className="text-xs text-gray-500">1 ngày trước</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                            <span className="text-purple-600 text-sm">🤖</span>
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-sm text-gray-700">AI gợi ý 5 khóa học mới cho bạn</p>
+                            <p className="text-xs text-gray-500">2 ngày trước</p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center">
-                        <span className="text-green-500">•</span>
-                        <span className="ml-2 text-sm text-gray-600">Hồ sơ của bạn được xem 12 lần tuần này</span>
-                      </div>
-                      <div className="flex items-center">
-                        <span className="text-purple-500">•</span>
-                        <span className="ml-2 text-sm text-gray-600">AI gợi ý 3 khóa học mới cho bạn</span>
+                    </div>
+
+                    {/* Quick Actions */}
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Hành động nhanh</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <button className="flex flex-col items-center p-4 bg-blue-50 hover:bg-blue-100 rounded-xl transition-colors group">
+                          <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                            <span className="text-white text-lg">🔍</span>
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">Tìm việc</span>
+                        </button>
+                        
+                        <button className="flex flex-col items-center p-4 bg-green-50 hover:bg-green-100 rounded-xl transition-colors group">
+                          <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                            <span className="text-white text-lg">📄</span>
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">Cập nhật CV</span>
+                        </button>
+                        
+                        <button className="flex flex-col items-center p-4 bg-purple-50 hover:bg-purple-100 rounded-xl transition-colors group">
+                          <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                            <span className="text-white text-lg">🤖</span>
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">AI Gợi ý</span>
+                        </button>
+                        
+                        <button className="flex flex-col items-center p-4 bg-orange-50 hover:bg-orange-100 rounded-xl transition-colors group">
+                          <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                            <span className="text-white text-lg">📚</span>
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">Khóa học</span>
+                        </button>
                       </div>
                     </div>
                   </div>
