@@ -622,13 +622,21 @@ const Dashboard = () => {
               )}
 
               {activeTab === 'ai-courses' && (
-                <div className="bg-white rounded-lg shadow">
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100">
                   <div className="p-6 border-b border-gray-200">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-medium text-gray-900">AI Gợi ý khóa học</h3>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                          <span className="text-white text-lg">📚</span>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900">AI Gợi ý khóa học</h3>
+                          <p className="text-sm text-gray-600">Phát triển kỹ năng thông minh</p>
+                        </div>
+                      </div>
                       <button
                         onClick={getCourseRecommendations}
-                        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+                        className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-lg hover:from-green-700 hover:to-blue-700 transition-all transform hover:scale-105 shadow-lg"
                       >
                         📚 Lấy gợi ý khóa học
                       </button>
@@ -636,17 +644,82 @@ const Dashboard = () => {
                   </div>
                   <div className="p-6">
                     {recommendations ? (
-                      <div className="space-y-4">
-                        <div className="bg-green-50 p-4 rounded-lg">
-                          <h4 className="font-medium text-green-900 mb-2">📚 Khóa học AI gợi ý cho bạn:</h4>
-                          <pre className="text-sm text-green-700 whitespace-pre-wrap">{recommendations}</pre>
+                      <div className="space-y-6">
+                        <div className="bg-gradient-to-r from-green-50 via-blue-50 to-green-50 border border-green-200 rounded-xl p-6">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                              <span className="text-white text-sm">🎓</span>
+                            </div>
+                            <h4 className="font-semibold text-green-900">Lộ trình học tập cá nhân hóa:</h4>
+                          </div>
+                          <div className="bg-white rounded-lg p-4 border border-green-100">
+                            <pre className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">{recommendations}</pre>
+                          </div>
+                        </div>
+                        
+                        <div className="grid md:grid-cols-3 gap-4">
+                          <div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-lg">
+                            <span className="text-blue-600 text-xl">⏱️</span>
+                            <div>
+                              <p className="text-sm font-medium text-blue-900">Tiết kiệm thời gian</p>
+                              <p className="text-xs text-blue-600">Học đúng thứ cần</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center space-x-2 p-3 bg-purple-50 rounded-lg">
+                            <span className="text-purple-600 text-xl">🎯</span>
+                            <div>
+                              <p className="text-sm font-medium text-purple-900">Tập trung</p>
+                              <p className="text-xs text-purple-600">Kỹ năng cần thiết</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center space-x-2 p-3 bg-green-50 rounded-lg">
+                            <span className="text-green-600 text-xl">📈</span>
+                            <div>
+                              <p className="text-sm font-medium text-green-900">Tăng cơ hội</p>
+                              <p className="text-xs text-green-600">Việc làm tốt hơn</p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="text-center py-12">
-                        <span className="text-6xl mb-4 block">📚</span>
-                        <h4 className="text-lg font-medium text-gray-900 mb-2">Phát triển kỹ năng với AI!</h4>
-                        <p className="text-gray-600 mb-6">AI sẽ phân tích hồ sơ và gợi ý những khóa học tốt nhất cho sự nghiệp của bạn</p>
+                      <div className="text-center py-16">
+                        <div className="relative">
+                          <img 
+                            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85"
+                            alt="AI Learning"
+                            className="w-32 h-32 mx-auto rounded-full object-cover mb-6 shadow-lg"
+                          />
+                          <div className="absolute -bottom-2 -right-8 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center animate-bounce">
+                            <span className="text-white text-sm">📚</span>
+                          </div>
+                        </div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-3">Phát triển kỹ năng với AI!</h4>
+                        <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                          AI sẽ phân tích hồ sơ và xu hướng thị trường để đề xuất 
+                          lộ trình học tập cá nhân hóa giúp bạn phát triển sự nghiệp
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-4 max-w-md mx-auto">
+                          <div className="text-center">
+                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                              <span className="text-blue-600 text-xl">🎯</span>
+                            </div>
+                            <p className="text-xs text-gray-600">Cá nhân hóa</p>
+                          </div>
+                          <div className="text-center">
+                            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                              <span className="text-green-600 text-xl">📊</span>
+                            </div>
+                            <p className="text-xs text-gray-600">Xu hướng mới</p>
+                          </div>
+                          <div className="text-center">
+                            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                              <span className="text-purple-600 text-xl">🚀</span>
+                            </div>
+                            <p className="text-xs text-gray-600">Thăng tiến</p>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
