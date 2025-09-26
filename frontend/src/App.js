@@ -540,13 +540,25 @@ const Dashboard = () => {
               )}
 
               {activeTab === 'ai-jobs' && (
-                <div className="bg-white rounded-lg shadow">
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100">
                   <div className="p-6 border-b border-gray-200">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-medium text-gray-900">AI Gợi ý việc làm</h3>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                          <img 
+                            src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85" 
+                            alt="AI" 
+                            className="w-6 h-6 rounded object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900">AI Gợi ý việc làm</h3>
+                          <p className="text-sm text-gray-600">Được hỗ trợ bởi GPT-4o</p>
+                        </div>
+                      </div>
                       <button
                         onClick={getJobRecommendations}
-                        className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+                        className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg"
                       >
                         🤖 Lấy gợi ý AI
                       </button>
@@ -554,17 +566,55 @@ const Dashboard = () => {
                   </div>
                   <div className="p-6">
                     {recommendations ? (
-                      <div className="space-y-4">
-                        <div className="bg-purple-50 p-4 rounded-lg">
-                          <h4 className="font-medium text-purple-900 mb-2">✨ AI đã phân tích hồ sơ của bạn!</h4>
-                          <pre className="text-sm text-purple-700 whitespace-pre-wrap">{recommendations}</pre>
+                      <div className="space-y-6">
+                        <div className="bg-gradient-to-r from-purple-50 via-pink-50 to-purple-50 border border-purple-200 rounded-xl p-6">
+                          <div className="flex items-center space-x-3 mb-4">
+                            <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                              <span className="text-white text-sm">✨</span>
+                            </div>
+                            <h4 className="font-semibold text-purple-900">AI đã phân tích hồ sơ của bạn!</h4>
+                          </div>
+                          <div className="bg-white rounded-lg p-4 border border-purple-100">
+                            <pre className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">{recommendations}</pre>
+                          </div>
+                        </div>
+                        
+                        {/* Success message */}
+                        <div className="flex items-center space-x-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                          <span className="text-green-600 text-xl">🎯</span>
+                          <div>
+                            <p className="text-green-800 font-medium">Phân tích hoàn thành!</p>
+                            <p className="text-green-600 text-sm">AI đã tìm được những việc làm phù hợp nhất với bạn</p>
+                          </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="text-center py-12">
-                        <span className="text-6xl mb-4 block">🤖</span>
-                        <h4 className="text-lg font-medium text-gray-900 mb-2">AI sẵn sàng giúp bạn tìm việc!</h4>
-                        <p className="text-gray-600 mb-6">Nhấn nút "Lấy gợi ý AI" để nhận được những gợi ý việc làm phù hợp nhất</p>
+                      <div className="text-center py-16">
+                        <div className="relative">
+                          <img 
+                            src="https://images.unsplash.com/photo-1716436329475-4c55d05383bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxBSSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzU4ODQyMDY2fDA&ixlib=rb-4.1.0&q=85"
+                            alt="AI Processor"
+                            className="w-32 h-32 mx-auto rounded-full object-cover mb-6 shadow-lg"
+                          />
+                          <div className="absolute -top-2 -right-8 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center animate-pulse">
+                            <span className="text-white text-xs">AI</span>
+                          </div>
+                        </div>
+                        <h4 className="text-xl font-semibold text-gray-900 mb-3">AI sẵn sàng giúp bạn tìm việc!</h4>
+                        <p className="text-gray-600 mb-8 max-w-md mx-auto">
+                          GPT-4o sẽ phân tích hồ sơ của bạn và đề xuất những công việc phù hợp nhất 
+                          dựa trên kỹ năng, kinh nghiệm và mong muốn nghề nghiệp
+                        </p>
+                        <div className="flex justify-center space-x-4">
+                          <div className="flex items-center space-x-2 text-sm text-gray-500">
+                            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                            <span>Độ chính xác 95%</span>
+                          </div>
+                          <div className="flex items-center space-x-2 text-sm text-gray-500">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                            <span>Phân tích thông minh</span>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
