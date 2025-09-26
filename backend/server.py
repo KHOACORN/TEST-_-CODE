@@ -348,17 +348,17 @@ async def get_candidate_recommendations(company_id: str, job_id: str):
         } for c in candidates], ensure_ascii=False, indent=2)}
         
         Hãy gợi ý TOP 3 ứng viên phù hợp nhất. Format JSON:
-        {
+        {{
             "recommendations": [
-                {
+                {{
                     "candidate_id": "id",
                     "match_percentage": 90,
                     "strengths": ["điểm mạnh 1", "điểm mạnh 2"],
                     "concerns": ["điều cần lưu ý"],
                     "interview_tips": "gợi ý phỏng vấn"
-                }
+                }}
             ]
-        }
+        }}
         """
         
         user_message = UserMessage(text=prompt)
