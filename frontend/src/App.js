@@ -618,6 +618,7 @@ const AppContent = () => {
       <>
         <Header />
         <Hero />
+        <FeaturesSection />
         <AuthForm />
       </>
     );
@@ -628,6 +629,140 @@ const AppContent = () => {
       <Header />
       <Dashboard />
     </>
+  );
+};
+
+// Features Section Component
+const FeaturesSection = () => {
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Tại sao chọn CareerBridge?
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Chúng tôi sử dụng AI tiên tiến để tạo ra trải nghiệm tuyển dụng tốt nhất
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="order-2 lg:order-1">
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Thông minh</h3>
+                  <p className="text-gray-600">Thuật toán AI học máy phân tích hồ sơ và đưa ra gợi ý chính xác 95%</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Nhanh chóng</h3>
+                  <p className="text-gray-600">Tìm được công việc phù hợp chỉ trong vòng 24 giờ</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Chính xác</h3>
+                  <p className="text-gray-600">Matching algorithm đảm bảo độ phù hợp cao nhất</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1758518730162-09a142505bfd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxqb2IlMjByZWNydWl0bWVudHxlbnwwfHx8fDE3NTg4NTI5NTd8MA&ixlib=rb-4.1.0&q=85"
+                alt="Professional Interview" 
+                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+              />
+              <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg">
+                <div className="text-sm text-gray-600">Tỷ lệ thành công</div>
+                <div className="text-2xl font-bold text-green-600">95%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1758520144420-3e5b22e9b9a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3JrcGxhY2V8ZW58MHx8fHwxNzU4Nzg4NzMxfDA&ixlib=rb-4.1.0&q=85"
+                alt="Business Success" 
+                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
+              />
+              <div className="absolute -top-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
+                <div className="text-sm">AI Powered</div>
+                <div className="text-lg font-bold">🧠 GPT-4o</div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Phân tích thông minh</h3>
+                  <p className="text-gray-600">AI phân tích xu hướng thị trường và đưa ra lời khuyên sự nghiệp</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Phát triển kỹ năng</h3>
+                  <p className="text-gray-600">Gợi ý khóa học và lộ trình phát triển cá nhân hóa</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <span className="text-2xl">🤝</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Kết nối chuyên nghiệp</h3>
+                  <p className="text-gray-600">Xây dựng mạng lưới quan hệ trong ngành</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Call to Action */}
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white">
+            <h3 className="text-3xl font-bold mb-4">Sẵn sàng bắt đầu hành trình?</h3>
+            <p className="text-xl mb-8 opacity-90">Tham gia cùng hàng nghìn ứng viên và nhà tuyển dụng</p>
+            <div className="flex justify-center space-x-4">
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Đăng ký ngay
+              </button>
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                Tìm hiểu thêm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
