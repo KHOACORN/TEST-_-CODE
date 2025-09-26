@@ -397,18 +397,18 @@ async def get_course_recommendations(user_id: str):
         3. Theo kịp xu hướng ngành nghề
         
         Format JSON:
-        {
+        {{
             "courses": [
-                {
+                {{
                     "title": "Tên khóa học",
                     "provider": "Nhà cung cấp (Coursera, Udemy, v.v.)",
                     "duration": "Thời gian",
                     "skill_focus": "Kỹ năng trọng tâm",
                     "career_impact": "Tác động đến sự nghiệp",
                     "priority": "high/medium/low"
-                }
+                }}
             ]
-        }
+        }}
         """
         
         user_message = UserMessage(text=prompt)
