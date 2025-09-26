@@ -282,17 +282,17 @@ async def get_job_recommendations(user_id: str):
         } for job in jobs], ensure_ascii=False, indent=2)}
         
         Hãy gợi ý TOP 3 công việc phù hợp nhất và giải thích tại sao. Format JSON:
-        {
+        {{
             "recommendations": [
-                {
+                {{
                     "job_id": "id",
                     "title": "tên công việc",
                     "match_percentage": 85,
                     "reasons": ["lý do 1", "lý do 2"],
                     "tips": "lời khuyên để tăng cơ hội"
-                }
+                }}
             ]
-        }
+        }}
         """
         
         user_message = UserMessage(text=prompt)
